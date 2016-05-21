@@ -33,6 +33,7 @@ router.get('/get', function (req, res) {
         else {
             console.log('data recieved from database');
             console.log('Number of items: ' + data.length);
+            /*
             res.setHeader('Access-Control-Allow-Origin', 'http://localhost:3000');
             // Request methods you wish to allow
             res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
@@ -42,7 +43,7 @@ router.get('/get', function (req, res) {
 
             // Set to true if you need the website to include cookies in the requests sent
             // to the API (e.g. in case you use sessions)
-            res.setHeader('Access-Control-Allow-Credentials', true);
+            res.setHeader('Access-Control-Allow-Credentials', true);*/
             res.end(JSON.stringify(data));
         }
     });

@@ -26,7 +26,7 @@ module.exports = {
 
     start: function (){
         port = process.env.PORT || 8080;
-        console.log('rest server module started');
+        console.log('rest server module started: ' + port);
         var server = app.listen(port, function(){
             console.log('Server started on port: ' + port);
         });

@@ -7,8 +7,11 @@ var express = require('express');
 
 var index = require('./routes/index.js');
 var incident = require('./routes/incident.js');
+var parking = require('./routes/parking.js');
 var data = require('./routes/data.js');
-//var keymanager = require('./auth/keymanager.js');
+var env = require('../constants/environment.js');
+
+var ENV = env.getEnvironment();
 
 // private memeber vars
 var app;
@@ -21,12 +24,13 @@ module.exports = {
         
         app.use('/', index);
         app.use('/incident', incident);
+        app.use('/parking', parking);
         app.use('/data', data);
     },
 
     start: function (){
         port = process.env.PORT || 8080;
-        console.log('rest server module started: ' + port);
+        console.log('rest server module started');
         var server = app.listen(port, function(){
             console.log('Server started on port: ' + port);
         });
